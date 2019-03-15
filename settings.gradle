@@ -1,1 +1,1 @@
-include ':simple', ':baselib', ':cutilslib', ':netlib'
+include ':simple', ':baselib', ':cutilslib', ':netlib', ':app'

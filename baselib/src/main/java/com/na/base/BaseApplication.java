@@ -1,22 +1,28 @@
 package com.na.base;
 
-import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 
-public class BaseAppliction extends Application {
-    private static BaseAppliction mApp;
+public abstract class BaseApplication extends MultiDexApplication {
+    private static BaseApplication mApp;
 
     @Override
     public void onCreate() {
         super.onCreate();
         mApp = this;
+        onInit();
     }
 
-    public static BaseAppliction getApp() {
+    public static BaseApplication getApp() {
         return mApp;
     }
 
     public static Context getContext() {
         return mApp.getApplicationContext();
     }
+
+    protected void onInit() {
+
+    }
+
 }
